@@ -1,5 +1,5 @@
 {% set name = "msoffcrypto-tool" %}
-{% set version = "5.0.1" %}
+{% set version = "5.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9efd0ef5cc3e086e2d175e7a5d7b2b8cb59836c896b8a486d362bbca166db645
+  sha256: fe5413deeb9c88f6274bea9ebf61d77836365db81a1c3daef9fd2cbd4b048f41
 
 build:
   entry_points:

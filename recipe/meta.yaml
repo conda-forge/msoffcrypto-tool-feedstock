@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 44b545adba0407564a0cc3d6dde6ca36b7c0fdf352b85bca51618fa1d4817370
 
 build:
@@ -14,17 +14,17 @@ build:
     - msoffcrypto-tool = msoffcrypto.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6,<4.0
+    - python {{ python_min }}
     - poetry
   run:
     - cryptography >=2.3
     - olefile >=0.45
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
 
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     - msoffcrypto-tool --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/nolze/msoffcrypto-tool

@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: msoffcrypto-tool
-  version: 6.0.0
+  version: "6.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 9a5ebc4c0096b42e5d7ebc2350afdc92dc511061e935ca188468094fdd032bbe
+  sha256: e2d7dfca6ff69cf3da0a7225329e6c26febb4360f329db4937d6ee527fdd2569
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
